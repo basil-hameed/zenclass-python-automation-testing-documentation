@@ -1,7 +1,6 @@
----
 
 ### Installation Guide (Python)  
----
+
 
 **Step 1:**  
 ---  
@@ -40,25 +39,21 @@ After downloading Python, you need to configure the environment variables for Py
 ---  
 Locate the Python installation folder:  
 By default, Python is installed in the **`C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<Version>`** folder. In case you have installed Python at another location, copy that path.
-
 ---
 
 **Step 2:**  
 ---  
 Go to the search bar and search for **Environment Variables -> Edit the system environment variables.** Under the **Advanced** tab, click on **Environment Variables**.
-
 ---
 
 **Step 3:**  
 ---  
 In the Environment Variables window, locate the **Path** variable under **System variables**, and click the **Edit** button.
-
 ---
 
 **Step 4:**  
 ---  
 In the Path variable, click on **New** and add the folder path where Python is installed (e.g., **`C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<Version>`**). 
-
 ---
 
 **Step 5:**  
@@ -68,5 +63,4 @@ Click **OK** to save the changes. To verify the installation, open **Command Pro
 python --version
 ```
 If Python is installed correctly, the version will be displayed.
-
 ---  
