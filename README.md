@@ -18,7 +18,7 @@
   </tr>
   <tr>
     <td>Java Tutorial</td>
-    <td><a href="https://github.com/zen-class/zen-class-automation-testing-documentation/tree/main/002-Java-Tutorial-Documentation">Java Tutorial</a></td>
+    <td><a href="https://github.com/zen-class/zen-class-automation-testing-documentation/tree/main/002-Python-Tutorial-Documentation">Python Tutorial</a></td>
   </tr>
   <tr>
     <td>Git & Github</td>
@@ -34,11 +34,11 @@
   </tr>
   <tr>
     <td>BDD-Cucumber</td>
-    <td><a href="https://github.com/zen-class/zen-class-automation-testing-documentation/tree/main/006-%20BDD-Cucumber">BDD-Cucumber</a></td>
+    <td><a href="https://github.com/zen-class/zen-class-automation-testing-documentation/tree/main/006-%20Pytest-Framework">Pytest Framework</a></td>
   </tr>
   <tr>
-    <td>Database & JDBC Connectivity</td>
-    <td><a href="https://github.com/zen-class/zen-class-automation-testing-documentation/tree/main/007-%20Database%20Connectivity">Database & JDBC Connectivity</a></td>
+    <td>MySQL Database</td>
+    <td><a href="https://github.com/zen-class/zen-class-automation-testing-documentation/tree/main/007-%20MySQL%20Database">MySQL Database</a></td>
   </tr>
 </table>
 </body>
