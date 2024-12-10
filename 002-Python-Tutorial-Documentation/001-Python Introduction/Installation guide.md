@@ -26,7 +26,7 @@ The installation process will be started.
 **Step 6:**  
 ---  
 Once the installation completes, click on the **Close** button.
----
+
 
 
 ### Setting up Environment in Python  
