@@ -1,110 +1,93 @@
-﻿## To implement test cases using POM framework, follow these steps: ##
+﻿### **Implementing Test Cases Using Page Object Model (POM) Framework:**
 
-**Create page classes:** 
+**Overview**:
+The Page Object Model (POM) is a design pattern used to create object repositories for web elements. It provides a way to encapsulate the web elements of a page in classes and makes the test scripts more readable, maintainable, and reusable.
 
-Define a class for each page of the application, encapsulating the page-specific elements and actions.
+**Steps to Implement POM Framework**:
 
-**Use Page Factory:** 
+1. **Create Page Classes**:
+   - Define a class for each page of the application.
+   - Each class should encapsulate the elements (fields) and actions (methods) related to that page.
+   - Use PageFactory to initialize web elements lazily when needed.
 
-Annotate the elements in page classes using @FindBy annotations to lazily initialize the elements.
+2. **Use Page Factory**:
+   - Develop the page elements to locate and initialize them automatically.
+   - This helps in speeding up the element identification process and ensures that the elements are updated as soon as the page loads.
 
-**Implement test cases:** 
-
-In your test scripts, use the page classes to interact with the application. This includes invoking methods defined in the page classes to perform actions and validate outcomes.
+3. **Implement Test Cases**:
+   - In your test scripts, use the page classes to interact with the application.
+   - Invoke the methods defined in the page classes to perform actions like entering text, clicking buttons, or validating outcomes.
+   - This abstraction allows test scripts to focus on test steps rather than directly interacting with web elements.
 
 ---
 
-For a real-time example, let's imagine a scenario where we have a web application for e-commerce.
-We'll create a POM structure for the login page:
+### **Example**:
 
----
-~~~
+#### **Login Page Class (`LoginPage.py`)**:
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import PageFactory
 
-// LoginPage.java
+class LoginPage:
+    def __init__(self, driver):
+        self.driver = driver
+        PageFactory.initElements(driver, self)
 
-import org.openqa.selenium.WebDriver;
+    usernameInput = driver.find_element(By.ID, "username")
+    passwordInput = driver.find_element(By.ID, "password")
+    loginButton = driver.find_element(By.ID, "loginButton")
 
-import org.openqa.selenium.WebElement;
+    def enterUsername(self, username):
+        self.usernameInput.send_keys(username)
 
-import org.openqa.selenium.support.FindBy;
+    def enterPassword(self, password):
+        self.passwordInput.send_keys(password)
 
-import org.openqa.selenium.support.PageFactory;
+    def clickLogin(self):
+        self.loginButton.click()
+```
 
-public class LoginPage {
+#### **Test Case Class (`TestLogin.py`)**:
+```python
+from selenium import webdriver
+from page_objects import LoginPage  # Import the LoginPage class from page_objects
 
-private WebDriver driver;
+def test_login():
+    # Initialize the WebDriver
+    driver = webdriver.Chrome()
 
-@FindBy(id = "username")
+    # Navigate to the login page
+    driver.get("https://example.com/login")
 
-private WebElement usernameInput;
+    # Create an instance of the LoginPage
+    loginPage = LoginPage(driver)
 
-@FindBy(id = "password")
+    # Perform login actions
+    loginPage.enterUsername("myUsername")
+    loginPage.enterPassword("myPassword")
+    loginPage.clickLogin()
 
-private WebElement passwordInput;
+    # Add assertions or further validation as needed
+    # Example: assert "Welcome" in driver.page_source
 
-@FindBy(id = "loginButton")
+    # Close the browser
+    driver.quit()
+```
 
-private WebElement loginButton;
+### **Explanation**:
 
-public LoginPage(WebDriver driver) {
+1. **Page Classes**:
+   - `LoginPage` class encapsulates the page-specific elements (username input, password input, and login button) and actions (entering text, clicking login).
+   - The `__init__` method initializes the elements using `PageFactory.initElements`.
 
-this.driver = driver;
+2. **Page Factory**:
+   - `PageFactory.initElements(driver, self)` is used to initialize the web elements. This method speeds up the element initialization process and avoids stale element exceptions.
 
-PageFactory.initElements(driver, this);
+3. **Test Cases**:
+   - In `TestLogin`, a new instance of the `LoginPage` is created and actions like entering username and password are performed.
+   - The `clickLogin()` method is used to perform the login action.
+   - After the login attempt, you can add assertions or validations to check if the login was successful or not.
+   - Finally, the browser is closed.
 
-}
-
-public void enterUsername(String username) {
-
-usernameInput.sendKeys(username);
-
-}
-
-public void enterPassword(String password) {
-
-passwordInput.sendKeys(password);
-
-}
-
-public void clickLogin() {
-
-loginButton.click();
-
-}
-
-}
-~~~
-
-~~~
-// TestLogin.java
-
-import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.chrome.ChromeDriver;
-
-public class TestLogin {
-
-public static void main(String[] args) {
-
-WebDriver driver = new ChromeDriver();
-
-driver.get("https://example.com/login");
-
-LoginPage loginPage = new LoginPage(driver);
-
-loginPage.enterUsername("myUsername");
-
-loginPage.enterPassword("myPassword");
-
-loginPage.clickLogin();
-
-// Perform assertions or further actions after login
-
-// ...
-
-driver.quit();
-
-}
-
-}
-~~~
+The POM framework helps in creating modular and maintainable test scripts, which can be reused across different tests. This makes it easier to update and maintain tests in the future.

@@ -1,73 +1,88 @@
-﻿1. **click():**
-
-The click() method is used to simulate a mouse click on a web element, such as a button, link, or checkbox. This action emulates a left-click performed by a user.
-~~~
-WebElement button = driver.findElement(By.id("myButton"));
-
-button.click();
-~~~
-2. **sendKeys():**
-
-The sendKeys() method allows you to simulate typing into an input field or any other editable element on a webpage.
-~~~
-WebElement inputField = driver.findElement(By.id("username"));
-
-inputField.sendKeys("myusername");
-~~~
-3. **clear():**
-
-The clear() method is used to clear the text present in an input field or textarea.
-~~~
-WebElement inputField = driver.findElement(By.id("username"));
-
-inputField.clear();
-~~~
-4. **submit():**
-
-The submit() method is used to submit a form. It works on form elements such as buttons or input fields.
-~~~
-WebElement form = driver.findElement(By.id("loginForm"));
-
-form.submit();
-~~~
+﻿###  Methods in Selenium with Python ###
 
 
+**Selenium WebElement Methods**: These methods allow you to interact with web elements on a webpage, such as buttons, input fields, and links. Each method serves a specific purpose:
 
-5. **getText():**
+---
 
-The getText() method retrieves the visible (rendered) text of a web element.
-~~~
-WebElement heading = driver.findElement(By.tagName("h1"));
+### 1. **click()**:
+- **Purpose**: Simulates a mouse click on a web element (e.g., button, link, checkbox).
+- **Syntax**:
+  ```python
+  button = driver.findElement(By.id("myButton"));
+  button.click();
+  ```
+- **Example**: Clicking a button with the id "myButton".
 
-String headingText = heading.getText();
+---
 
-System.out.println("Heading: " + headingText);
-~~~
-6. **getAttribute():**
+### 2. **sendKeys()**:
+- **Purpose**: Simulates typing into an input field or any editable element on a webpage.
+- **Syntax**:
+  ```python
+  inputField = driver.findElement(By.id("username"));
+  inputField.sendKeys("myusername");
+  ```
+- **Example**: Typing the text "myusername" into an input field.
 
-The getAttribute() method retrieves the value of a specified attribute of a web element.
-~~~
-WebElement link = driver.findElement(By.tagName("a"));
+---
 
-String hrefValue = link.getAttribute("href");
+### 3. **clear()**:
+- **Purpose**: Clears the text present in an input field or textarea.
+- **Syntax**:
+  ```python
+  inputField = driver.findElement(By.id("username"));
+  inputField.clear();
+  ```
+- **Example**: Clearing the text in the input field with the id "username".
 
-System.out.println("Link URL: " + hrefValue);
-~~~
-7. **isDisplayed(), isEnabled(), isSelected():**
+---
 
-These methods are used to check the state of an element.
+### 4. **submit()**:
+- **Purpose**: Submits a form by emulating the user’s click on the submit button or pressing the Enter key on the keyboard.
+- **Syntax**:
+  ```python
+  form = driver.findElement(By.id("loginForm"));
+  form.submit();
+  ```
+- **Example**: Submitting a form with the id "loginForm".
 
-isDisplayed() - checks if the element is currently visible on the page.
+---
 
-isEnabled()  - checks if the element is enabled or not.
+### 5. **getText()**:
+- **Purpose**: Retrieves the visible (rendered) text of a web element.
+- **Syntax**:
+  ```python
+  heading = driver.findElement(By.tagName("h1"));
+  headingText = heading.getText();
+  print("Heading: " + headingText);
+  ```
+- **Example**: Getting the text of an `h1` heading.
 
-isSelected() - checks if the element is selected (applicable for checkboxes, radio buttons, etc.).
-~~~
-WebElement element = driver.findElement(By.id("myElement"));
+---
 
-boolean isVisible = element.isDisplayed();
+### 6. **getAttribute()**:
+- **Purpose**: Retrieves the value of a specified attribute of a web element.
+- **Syntax**:
+  ```python
+  link = driver.findElement(By.tagName("a"));
+  hrefValue = link.getAttribute("href");
+  print("Link URL: " + hrefValue);
+  ```
+- **Example**: Retrieving the `href` attribute of a link.
 
-boolean isEnabled = element.isEnabled();
+---
 
-boolean isSelected = element.isSelected();
-~~~
+### 7. **isDisplayed(), isEnabled(), isSelected()**:
+- **Purpose**:
+  - **isDisplayed()**: Checks if the element is currently visible on the page.
+  - **isEnabled()**: Checks if the element is enabled (e.g., not disabled).
+  - **isSelected()**: Checks if the element is selected (applicable for checkboxes, radio buttons).
+- **Syntax**:
+  ```python
+  element = driver.findElement(By.id("myElement"));
+  isVisible = element.isDisplayed();
+  isEnabled = element.isEnabled();
+  isSelected = element.isSelected();
+  ```
+- **Example**: Checking the state of an element with the id "myElement".

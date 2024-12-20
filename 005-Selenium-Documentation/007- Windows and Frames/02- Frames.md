@@ -2,25 +2,28 @@
 
 Frame allow dividing a browser window into multiple sections, each with its own HTML document. Selenium needs to switch to the frame in which the target element is present to interact with it.
 
-**Example:**
+### **Example Code**:
+```python
+# Click a button that opens a new window
+newWindowButton = driver.find_element(By.ID, "newWindowButton")
+newWindowButton.click()
 
-Assume we have a webpage with a frame, and we need to interact with an element inside that frame.
+# Get all window handles
+windowHandles = driver.window_handles
+originalWindowHandle = driver.current_window_handle
 
----
+# Switch to the new window
+for handle in windowHandles:
+    if handle != originalWindowHandle:
+        driver.switch_to.window(handle)
+        
+        # Perform actions on the new window
+        # Example: Locate an element and input text
+        newWindowElement = driver.find_element(By.ID, "newWindowElement")
+        newWindowElement.send_keys("Some text")
 
-~~~
+        break
 
-// Switch to the frame by index
-
-driver.switchTo().frame(0);
-
-// Perform actions on elements inside the frame
-
-WebElement frameElement = driver.findElement(By.id("frameElementId"));
-
-frameElement.click();
-
-// Switch back to the main content
-
-driver.switchTo().defaultContent();
-~~~
+# Switch back to the original window if needed
+driver.switch_to.window(originalWindowHandle)
+```

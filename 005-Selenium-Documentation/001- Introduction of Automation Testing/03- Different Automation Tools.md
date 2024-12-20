@@ -8,11 +8,11 @@ Primarily used for automating web applications, Selenium supports multiple progr
 
 Designed for automating mobile applications (iOS and Android), supporting multiple programming languages.
 
-**Junit and TestNG:** 
+**Unit Test and Pytest:** 
 
-Popular Java-based testing frameworks used for creating and executing test cases.
+Popular Python-based testing frameworks used for creating and executing test cases.
 
-**Cucumber:** 
+**Behave BDD:** 
 
 A tool for behaviour-driven development (BDD) that allows automated acceptance tests to be written in a human-readable format.
 

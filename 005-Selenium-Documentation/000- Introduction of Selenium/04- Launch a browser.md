@@ -1,41 +1,87 @@
-﻿## How to create a simple selenium project to launch a browser: ##
-
-1. Integrate Selenium with java Project.
-
-2. In src folder create a package and create a class inside the package.
-
-![Class](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/5c796199-60ad-4209-bf9b-adf3a73f6299)
-
-3. Inside a class create a Main Method.
-
-![MM](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/9a428e2e-168f-4bb2-b7da-1db736417f86)
-
-4. Set the property of the browser and indicate the location of the browsers.
-
-Syntax : System.*setProperty*(key, value);
-
-Here System is a class & setProperty is a static method.
-
-**Key** – “webdriver.chrome.driver” --> Chrome Browser
-
-**Key** – “webdriver.gecko.driver”  --> Fire Fox Browser
-
-**Key** – “webdriver.ie.driver”     --> Internet Explorer
-
-**Value** – Within double quotes copy and paste the location of the WebDriver file for corresponding browser.
-
-5. WebDriver is an interface.
-
-Syntax : Interface ref = new classname();
-
-WebDriver driver  = new ChromeDriver();
-
-6. Use a method called “get” to launch the URL
-
-WebDriver driver = new ChromeDriver();
-
-driver.get(“URL”);
-
-![BL](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/4d4fdfd3-90ad-4c1a-9b07-dc068b321dfa)
+﻿### How to Create a Simple Selenium Project to Launch a Browser in Python ###
 
 
+**Steps to Create and Launch a Browser Using Selenium in Python:**
+
+
+### 1. Set Up Selenium Environment
+- Install Python and Selenium as detailed [here](#Installation-of-Selenium).
+
+---
+
+### 2. Create a Python Project
+1. **Create a Folder for the Project:**
+   - Name the folder (e.g., `Selenium_Project`).
+
+2. **Set Up the Python Script:**
+   - Inside the folder, create a new Python script file (e.g., `launch_browser.py`).
+
+---
+
+### 3. Write the Python Script
+1. **Set Up WebDriver Properties:**
+   In Selenium Python, you don't need to manually set system properties like Java. Instead, you pass the driver path directly to the WebDriver.
+
+2. **Example Script:**
+   ```python
+   from selenium import webdriver
+   from selenium.webdriver.common.by import By
+
+   # Specify the path to the WebDriver
+   driver_path = "path_to_your_chromedriver"
+
+   # Initialize the WebDriver (Chrome in this case)
+   driver = webdriver.Chrome(executable_path=driver_path)
+
+   # Launch the URL
+   driver.get("https://www.google.com")
+
+   # Print the title of the webpage
+   print("Title of the page is:", driver.title)
+
+   # Close the browser
+   driver.quit()
+   ```
+
+---
+
+### 4. Using `webdriver-manager` (Optional)
+To avoid managing WebDriver manually, use the **`webdriver-manager`** library:
+```bash
+pip install webdriver-manager
+```
+
+**Updated Script with WebDriver-Manager:**
+```python
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+# Automatically fetch and use the correct ChromeDriver version
+driver = webdriver.Chrome(ChromeDriverManager().install())
+
+# Launch the URL
+driver.get("https://www.google.com")
+
+# Print the title of the webpage
+print("Title of the page is:", driver.title)
+
+# Close the browser
+driver.quit()
+```
+
+---
+
+### 5. Execute the Script
+Run the script from your terminal or IDE:
+```bash
+python launch_browser.py
+```
+
+---
+
+**Key Points in Python (Compared to Java):**
+- No need to use `System.setProperty`.
+- WebDriver setup and initialization are simpler.
+- The script is more concise and Pythonic.
+
+Your browser should now launch successfully with the specified URL!
