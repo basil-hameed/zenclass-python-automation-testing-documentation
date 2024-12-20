@@ -1,4 +1,4 @@
-﻿Here's how you can adapt the given TestNG annotations for Python's `pytest` framework:
+﻿Annotations for Python's `pytest` framework:
 
 ### **@pytest.mark.test**:
 
