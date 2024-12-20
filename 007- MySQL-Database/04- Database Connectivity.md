@@ -4,7 +4,6 @@
 
 Python provides libraries such as **sqlite3** and **PyMySQL** for database connectivity. These libraries allow Python applications to connect to databases, execute SQL queries, and retrieve results. Here's an example using **sqlite3**, which is part of Python's standard library.
 
----
 
 **Example (Connecting to a SQLite Database):**
 ```python
