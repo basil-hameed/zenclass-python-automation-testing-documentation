@@ -1,6 +1,5 @@
 ﻿### Installation of Selenium in Python ###
 
----
 
 **Steps to Set Up Selenium in Python:**
 
