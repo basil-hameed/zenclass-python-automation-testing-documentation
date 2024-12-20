@@ -1,66 +1,100 @@
-﻿## Installation of Selenium: ##
+﻿### Installation of Selenium in Python ###
 
-Steps:
+---
 
-01: Go to Google and type “ Download Selenium Server Standalone jar” and click the first link.
+**Steps to Set Up Selenium in Python:**
 
-![G](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/88efc396-fd75-49eb-81ae-fa5aacf9a430)
+---
 
-Or 
+### 1. Install Python
+- Ensure Python is installed on your system. Download it from [Python's official website](https://www.python.org/).  
+- Verify installation:
+  ```bash
+  python --version
+  ```
 
-Link :  <https://www.selenium.dev/downloads/>.
+---
 
+### 2. Install Selenium Library
+- Install the Selenium package using pip:
+  ```bash
+  pip install selenium
+  ```
+- Verify installation:
+  ```bash
+  pip show selenium
+  ```
 
-02: Search for the stable version of the Selenium in that page and click the marked line(yellow colour marked).
+---
 
-![G](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/ab2d39ea-2f2c-4a41-8fe1-08d6a763fad3)
+### 3. Download Browser Drivers
+Selenium requires browser drivers to interact with browsers like Chrome, Firefox, Edge, etc.
 
-03: Once you click that it gets downloaded and copy that from your files.
+#### Steps for ChromeDriver:
+1. Open [ChromeDriver Downloads](https://chromedriver.chromium.org/downloads).
+2. Check your Chrome version:
+   - Open Chrome.
+   - Go to `Settings > About Chrome`.
+   - Note the version number.
+3. Download the ChromeDriver version matching your browser version.
+4. Extract the downloaded file and note the path to the `chromedriver` executable.
 
-04: Open your eclipse, create new java project and create two folders in the name of “Driver” & “Library”.
+---
 
-05: After creating two folders paste the selenium folder in the folder named “Library” and then right click on that and click on “Build path” and select “Add to build path”.
+### 4. Set Up Your Selenium Project
+Create a project folder for your Selenium scripts.
 
-06: It will automatically create another folder in the name of “Referenced Libraries”.
+---
 
-![L](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/c5343cd7-9dd6-4788-8b66-415f5f9eec05)
+### 5. Basic Selenium Script Example
+Save the following script in your project directory as `test.py`:
+```python
+from selenium import webdriver
 
-07: Then you need to download driver like Chrome, Firefox etc,.
+# Specify the path to the ChromeDriver executable
+driver_path = "path_to_your_chromedriver"
 
-08: Go to Google and type “Download web Driver for Different Browsers, you will get the same link which you download selenium stand alone.
+# Initialize the WebDriver
+driver = webdriver.Chrome(executable_path=driver_path)
 
-![D](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/705e4f58-1f12-4bda-ad81-e440041a8939)
+# Open a website
+driver.get("https://www.google.com")
 
-09: Click on this link and Scroll down to find browsers.
+print("Title of the page is:", driver.title)
 
-![BBB](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/a5873219-8f56-47b4-89e3-00a95f5eed51)
+# Close the browser
+driver.quit()
+```
 
-10: Click on Browser you will get different browsers.
+---
 
-![DDDDD](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/504b4cad-f853-432b-9091-ab23d108e9b6)
+### 6. Run the Selenium Script
+- Execute the script using Python:
+  ```bash
+  python test.py
+  ```
 
-11: For example now I am going to take Chrome Browser, You need to click on documentation for which one you want.
+---
 
-12: If you click on chrome driver it will re direct to the official web page of the browsers.
+### 7. Optional: Manage Drivers Automatically
+Instead of manually downloading and managing drivers, use the **webdriver-manager** package:
+```bash
+pip install webdriver-manager
+```
 
-13: Click on Downloads in that page.
+**Updated Script Using `webdriver-manager`:**
+```python
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
-![Download](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/ef2cb207-1cbb-40d8-8b7c-ce116a92f90e)
+# Automatically fetch and use the correct ChromeDriver version
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
-14: Or you simply use this link : <https://chromedriver.chromium.org/downloads>
+# Open a website
+driver.get("https://www.google.com")
 
-![BBB](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/7d66e2b4-def4-4709-bd40-13151b1d8a22)
+print("Title of the page is:", driver.title)
 
-15: You need to see your chrome version to download the suitable chrome driver version.
-
- Chrome --> Click on 3 dots on the top right corner --> Click on settings --> Scroll down and click on About Chrome in bottom left corner --> There you can see the chrome version.
-
-16: Download the same version or below version of the browser to support your chrome browser.
-
-17: After downloading that you need to extract and copy the chrome exe file and paste it in the folder name as “Driver” in eclipse.
-
-![CB](https://github.com/manoja13702/Manual-Testing-N/assets/142867318/c0fb2a1b-e189-48ae-b429-2a3468a8410c)
-
-18: Your browser is ready to launch.
-
-
+# Close the browser
+driver.quit()
+```
