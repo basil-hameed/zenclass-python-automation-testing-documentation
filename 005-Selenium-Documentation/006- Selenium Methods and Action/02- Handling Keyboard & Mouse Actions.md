@@ -22,14 +22,14 @@ actions = ActionChains(driver)
 1. **Simulating a Click**:
    - To click on a specific element.
    ```python
-   button = driver.find_element(By.id("myButton"))
+   button = driver.find_element(By.ID("myButton"))
    actions.click(button).perform()
    ```
 
 2. **Typing in an Input Field**:
    - To type text into an input field.
    ```python
-   inputField = driver.find_element(By.id("username"))
+   inputField = driver.find_element(By.ID("username"))
    actions.send_keys(inputField, "myusername").perform()
    ```
 
@@ -42,22 +42,22 @@ actions = ActionChains(driver)
 4. **Mouse Hover**:
    - To hover over an element.
    ```python
-   menu = driver.find_element(By.id("menu"))
+   menu = driver.find_element(By.ID("menu"))
    actions.move_to_element(menu).perform()
    ```
 
 5. **Dragging and Dropping**:
    - To drag and drop an element.
    ```python
-   source = driver.find_element(By.id("source"))
-   target = driver.find_element(By.id("target"))
+   source = driver.find_element(By.ID("source"))
+   target = driver.find_element(By.ID("target"))
    actions.drag_and_drop(source, target).perform()
    ```
 
 6. **Context Click (Right-Click)**:
    - To right-click on an element.
    ```python
-   element = driver.find_element(By.id("myElement"))
+   element = driver.find_element(By.ID("myElement"))
    actions.context_click(element).perform()
    ```
 

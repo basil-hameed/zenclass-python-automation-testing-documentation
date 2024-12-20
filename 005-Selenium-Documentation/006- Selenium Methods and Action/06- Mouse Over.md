@@ -17,7 +17,7 @@ actions = ActionChains(driver)
 1. **Basic Mouse Over**:
    - To move the mouse pointer to an element without clicking.
    ```python
-   element = driver.find_element(By.id("myElement"))
+   element = driver.find_element(By.ID("myElement"))
    
    actions.move_to_element(element).perform()
    ```
@@ -25,8 +25,8 @@ actions = ActionChains(driver)
 2. **Handling Dropdowns**:
    - When dealing with dropdowns that appear on hover, you can use `moveToElement()` to ensure they are visible.
    ```python
-   menu = driver.find_element(By.id("menu"))
-   sub_menu = driver.find_element(By.id("submenu"))
+   menu = driver.find_element(By.ID("menu"))
+   sub_menu = driver.find_element(By.ID("submenu"))
    
    actions.move_to_element(menu).move_to_element(sub_menu).click().perform()
    ```
@@ -34,7 +34,7 @@ actions = ActionChains(driver)
 3. **Using Offset Values**:
    - Moving to an element at specific coordinates relative to the element.
    ```python
-   element = driver.find_element(By.id("myElement"))
+   element = driver.find_element(By.ID("myElement"))
    
    actions.move_to_element_with_offset(element, 10, 10).perform()
    ```

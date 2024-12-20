@@ -14,10 +14,10 @@
 2. **Conditions**:
    - `ExpectedConditions` is a class in Selenium that provides various pre-defined conditions.
    - Common conditions include:
-     - `element_to_be_clickable(By.id("someId"))`: Waits until the element is clickable.
-     - `visibility_of_element_located(By.id("someId"))`: Waits until the element is visible.
-     - `presence_of_element_located(By.id("someId"))`: Waits until the element is present in the DOM.
-     - `text_to_be_present_in_element_value(By.id("someId"), "text")`: Waits until the text is present in the value of the specified element.
+     - `element_to_be_clickable(By.ID("someId"))`: Waits until the element is clickable.
+     - `visibility_of_element_located(By.ID("someId"))`: Waits until the element is visible.
+     - `presence_of_element_located(By.ID("someId"))`: Waits until the element is present in the DOM.
+     - `text_to_be_present_in_element_value(By.ID("someId"), "text")`: Waits until the text is present in the value of the specified element.
 
 3. **Usage**:
    - `WebDriverWait` is particularly useful when dealing with dynamic content that may take some time to load or elements that appear asynchronously.

@@ -17,7 +17,7 @@ actions = ActionChains(driver)
 1. **Simulating a Click and Hold**:
    - To click and hold on a particular element.
    ```python
-   element = driver.find_element(By.id("myElement"))
+   element = driver.find_element(By.ID("myElement"))
    
    actions.click_and_hold(element).perform()
    ```
@@ -25,8 +25,8 @@ actions = ActionChains(driver)
 2. **Click and Hold followed by Drag and Drop**:
    - Often used together with `drag_and_drop()`.
    ```python
-   source = driver.find_element(By.id("source"))
-   target = driver.find_element(By.id("target"))
+   source = driver.find_element(By.ID("source"))
+   target = driver.find_element(By.ID("target"))
 
    actions.click_and_hold(source).move_to_element(target).release().perform()
    ```
@@ -34,7 +34,7 @@ actions = ActionChains(driver)
 3. **Using `clickAndHold()` and then releasing**:
    - Useful for interactions that require holding down the mouse button temporarily.
    ```python
-   element = driver.find_element(By.id("myElement"))
+   element = driver.find_element(By.ID("myElement"))
    
    actions.click_and_hold(element).pause(2000).release().perform()
    ```

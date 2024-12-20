@@ -17,8 +17,8 @@ actions = ActionChains(driver)
 1. **Basic Drag and Drop**:
    - To drag one element and drop it onto another.
    ```python
-   source_element = driver.find_element(By.id("source"))
-   target_element = driver.find_element(By.id("target"))
+   source_element = driver.find_element(By.ID("source"))
+   target_element = driver.find_element(By.ID("target"))
    
    actions.drag_and_drop(source_element, target_element).perform()
    ```
@@ -26,8 +26,8 @@ actions = ActionChains(driver)
 2. **Handling Drag and Drop with Mouse Coordinates**:
    - In some cases, you may need to perform drag and drop by specifying mouse coordinates.
    ```python
-   source_element = driver.find_element(By.id("source"))
-   target_element = driver.find_element(By.id("target"))
+   source_element = driver.find_element(By.ID("source"))
+   target_element = driver.find_element(By.ID("target"))
    
    actions.click_and_hold(source_element).move_to_element(target_element).release().perform()
    ```

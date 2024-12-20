@@ -18,7 +18,7 @@ actions = ActionChains(driver)
 1. **Simulating a Right-Click**:
    - To simulate a right-click on a specific element.
    ```python
-   element = driver.find_element(By.id("myElement"))
+   element = driver.find_element(By.ID("myElement"))
    
    actions.context_click(element).perform()
    ```
@@ -26,7 +26,7 @@ actions = ActionChains(driver)
 2. **Handling Context Menu Options**:
    - Once the right-click is performed, additional actions can be chained to handle menu items.
    ```python
-   menu_item = driver.find_element(By.xpath("//menu[@id='contextMenuItem']"))
+   menu_item = driver.find_element(By.XPATH("//menu[@id='contextMenuItem']"))
 
    actions.context_click(element).move_to_element(menu_item).click().perform()
    ```
