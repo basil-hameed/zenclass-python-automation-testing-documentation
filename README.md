@@ -33,7 +33,7 @@
     <td><a href="https://github.com/basil-hameed/zenclass-python-automation-testing-documentation/tree/main/005-Selenium-Documentation">Selenium</a></td>
   </tr>
   <tr>
-    <td>BDD-Cucumber</td>
+    <td>Pytest Framework</td>
     <td><a href="https://github.com/basil-hameed/zenclass-python-automation-testing-documentation/tree/main/006-%20Pytest-Framework">Pytest Framework</a></td>
   </tr>
   <tr>
