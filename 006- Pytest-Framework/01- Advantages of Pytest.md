@@ -1,4 +1,4 @@
-﻿### **Advantages of Pytest over JUnit:**
+﻿### **Advantages of Pytest:**
 
 **a. Parallel Test Execution**:
 
